@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algoritmos de Búsqueda - LR</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #2c3e50;
+            color: #ecf0f1;
+        }
+        h1, h2, h3 {
+            color: #dfd077;
+        }
+        .algorithm {
+            background-color: #34495e;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+        .question {
+            background-color: #2e4053;
+            padding: 10px;
+            margin: 10px 0;
+            border-left: 5px solid #3498db;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 5px;
+        }
+        a {
+            color: #3498db;
+        }
+        a:hover {
+            color: #1abc9c;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Algoritmos de Búsqueda / LR</h1>
+
+    <div class="algorithm">
+        <h2>Búsqueda en Anchura (BFS)</h2>
+        <p><strong>Descripción:</strong> Explora el grafo nivel por nivel. Usa una cola (FIFO) para almacenar los nodos por visitar.</p>
+        <p><strong>Ventajas:</strong> Garantiza encontrar la solución óptima si todos los pasos tienen el mismo costo.</p>
+        <p><strong>Desventajas:</strong> Puede requerir más memoria porque explora ampliamente antes de profundizar.</p>
+    </div>
+
+    <div class="algorithm">
+        <h2>Búsqueda en Profundidad (DFS)</h2>
+        <p><strong>Descripción:</strong> Explora el grafo profundizando lo más posible antes de retroceder. Usa una pila (LIFO).</p>
+        <p><strong>Ventajas:</strong> Utiliza menos memoria que BFS. Es útil para problemas en los que la solución está profunda.</p>
+        <p><strong>Desventajas:</strong> No garantiza encontrar el camino más corto.</p>
+    </div>
+
+    <div class="algorithm">
+        <h2>A*</h2>
+        <p><strong>Descripción:</strong> Combina BFS con una heurística que estima el costo desde el nodo actual hasta el objetivo.</p>
+        <p><strong>Ventajas:</strong> Encuentra el camino óptimo con mayor eficiencia que BFS, si la heurística es apropiada.</p>
+        <p><strong>Desventajas:</strong> Requiere una buena función heurística para ser efectivo.</p>
+    </div>
+
+    <div class="algorithm">
+        <h2>Dijkstra</h2>
+        <p><strong>Descripción:</strong> Similar a A*, pero sin usar heurísticas. Encuentra el camino más corto desde un nodo inicial a todos los demás.</p>
+        <p><strong>Ventajas:</strong> Garantiza encontrar el camino más corto en grafos ponderados.</p>
+        <p><strong>Desventajas:</strong> Puede ser más lento que A* en algunos casos, ya que no tiene heurística.</p>
+    </div>
+
+    <div class="algorithm">
+        <h2>Algoritmo de Prim y Kruskal</h2>
+        <p><strong>Descripción:</strong> Se utilizan para encontrar un árbol de expansión mínima en un grafo ponderado, conectando todos los nodos con el costo total más bajo.</p>
+    </div>
+
+    <h2>Comparación y Beneficios</h2>
+    <ul>
+        <li><strong>BFS</strong> busca el <strong>camino óptimo</strong> si todas las transiciones tienen el mismo costo.</li>
+        <li><strong>DFS</strong> es útil en búsquedas donde la <strong>profundidad es clave</strong>, aunque no garantiza la mejor solución.</li>
+        <li><strong>A*</strong> busca el <strong>camino más óptimo</strong>, utilizando una función heurística para acelerar la búsqueda.</li>
+        <li><strong>Dijkstra</strong> es útil en <strong>grafos ponderados</strong> y encuentra el <strong>camino más corto</strong> sin necesidad de heurística.</li>
+    </ul>
+
+    <h2>Preguntas Frecuentes</h2>
+
+    <div class="question">
+        <h3>1. ¿Cuál es la principal diferencia entre BFS y DFS?</h3>
+        <p><strong>Respuesta:</strong> BFS explora el grafo nivel por nivel utilizando una cola FIFO, mientras que DFS profundiza lo más posible usando una pila LIFO. BFS garantiza el camino más corto si los costos son iguales, DFS no lo garantiza.</p>
+    </div>
+
+    <div class="question">
+        <h3>2. ¿En qué situaciones sería más ventajoso usar DFS en lugar de BFS?</h3>
+        <p><strong>Respuesta:</strong> DFS es más ventajoso cuando la solución está en las profundidades del grafo o cuando se quiere optimizar el uso de memoria.</p>
+    </div>
+
+    <div class="question">
+        <h3>3. ¿Qué papel juega la función heurística en el algoritmo A*?</h3>
+        <p><strong>Respuesta:</strong> La función heurística estima el costo hasta el objetivo, permitiendo priorizar los nodos más prometedores y hacer la búsqueda más eficiente.</p>
+    </div>
+
+    <div class="question">
+        <h3>4. ¿Cómo garantiza Dijkstra encontrar el camino más corto en un grafo ponderado?</h3>
+        <p><strong>Respuesta:</strong> Dijkstra siempre expande el nodo con la menor distancia acumulada desde el nodo inicial, asegurando así que se encuentra el camino más corto.</p>
+    </div>
+
+    <div class="question">
+        <h3>5. ¿Qué algoritmos se pueden utilizar para construir un árbol de expansión mínima en un grafo ponderado?</h3>
+        <p><strong>Respuesta:</strong> Los algoritmos de Prim y Kruskal se utilizan para construir árboles de expansión mínima.</p>
+    </div>
+
+    <div class="question">
+        <h3>6. Explica una ventaja clave del algoritmo BFS en comparación con DFS.</h3>
+        <p><strong>Respuesta:</strong> BFS garantiza encontrar el camino más corto en grafos no ponderados, mientras que DFS no siempre lo hace.</p>
+    </div>
+
+    <div class="question">
+        <h3>7. ¿Por qué el algoritmo A* puede ser más eficiente que BFS?</h3>
+        <p><strong>Respuesta:</strong> A* utiliza una heurística que guía la búsqueda hacia el objetivo, lo que reduce el número de nodos a explorar en comparación con BFS.</p>
+    </div>
+
+    <div class="question">
+        <h3>8. ¿Qué es un grafo y cómo se representa en el contexto de los algoritmos de búsqueda?</h3>
+        <p><strong>Respuesta:</strong> Un grafo es una estructura compuesta por nodos (vértices) y aristas (conexiones). En algoritmos de búsqueda, se representa como un conjunto de estados (nodos) y transiciones (aristas) que deben ser explorados para encontrar una solución.</p>
+    </div>
+
+</body>
+</html>
